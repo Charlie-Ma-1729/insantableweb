@@ -346,11 +346,13 @@ html {
 }
 
 .build-view-img {
-  display: none;
+  display: none !important;
 }
 
 .build-view-img.active {
-  display: block;
+  display: block !important;
+  width: 100%;
+  height: auto;
   animation: fadeIn 0.35s ease forwards;
 }
 
@@ -377,6 +379,7 @@ html {
   opacity: 0;
   transition: opacity 0.25s ease;
   pointer-events: none;
+  z-index: 3;
 }
 
 .lightbox-trigger:hover .lightbox-hint,
