@@ -209,16 +209,32 @@ html {
 /* ── Process Steps ── */
 .process-step {
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.process-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7.5rem;
+  min-height: 3.25rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
 }
 
 .process-step:not(:last-child)::after {
   content: '➔';
   position: absolute;
-  right: -1.25rem;
+  right: -1.15rem;
   top: 50%;
   transform: translateY(-50%);
   color: var(--accent);
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 768px) {
