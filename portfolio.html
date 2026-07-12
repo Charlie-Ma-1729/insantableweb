@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="癲桌工藝 IMA 精選作品集 — 建築類與資料包展示。">
+  <title>作品集 | 癲桌工藝 IMA</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              100: '#f5f0e8',
+              300: '#cfc6b8',
+              400: '#a89f90',
+              500: '#7a7368',
+              600: '#5c564c',
+              800: '#2a241c',
+              900: '#161310',
+              950: '#0c0b09',
+            },
+            emerald: {
+              400: '#f0c878',
+              500: '#ebb86a',
+              600: '#e2a147',
+              800: '#996b2c',
+              950: '#1f160c',
+            },
+            amber: {
+              500: '#996b2c',
+              600: '#7a5520',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="icon" type="image/webp" href="assets/imgs/favicon.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-scrolled">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+
+        <a href="index.html" class="flex items-center group">
+          <img src="assets/imgs/Logos/logo1.svg" alt="癲桌工藝 I.M. Atelier" class="h-10 lg:h-12 w-auto group-hover:opacity-90 transition-opacity">
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium">首頁</a>
+          <a href="portfolio.html" class="nav-link nav-link-active text-sm font-medium">作品集</a>
+          <a href="services.html" class="nav-link text-sm font-medium">技術委託</a>
+          <a href="team.html" class="nav-link text-sm font-medium">關於團隊</a>
+          <a href="mailto:contact@imatw.org"
+             class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-5 py-2 rounded-md text-sm font-semibold shadow-neon-emerald transition-all">
+            聯繫我們
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn"
+                class="md:hidden text-slate-300 hover:text-emerald-500 transition-colors p-2"
+                aria-label="開啟選單"
+                aria-expanded="false">
+          <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+          <i id="close-icon" class="fa-solid fa-xmark text-xl hidden"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="flex flex-col gap-3 bg-slate-900/95 rounded-lg p-4 border border-emerald-600/20 shadow-lg">
+          <a href="index.html" class="nav-link py-2 px-3 rounded">首頁</a>
+          <a href="portfolio.html" class="nav-link nav-link-active py-2 px-3 rounded">作品集</a>
+          <a href="services.html" class="nav-link py-2 px-3 rounded">技術委託</a>
+          <a href="team.html" class="nav-link py-2 px-3 rounded">關於團隊</a>
+          <a href="mailto:contact@imatw.org"
+             class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-5 py-2.5 rounded-md text-sm font-semibold text-center shadow-neon-emerald transition-all mt-1">
+            聯繫我們
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-banner bg-slate-900 border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-3">精選作品集</h1>
+        <p class="text-slate-400 max-w-xl mx-auto">從壯闊建築到精密資料包，每一個方塊都承載著我們的工藝精神。</p>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+          <button class="tab-btn active px-6 py-2.5 rounded-md text-sm font-semibold bg-slate-900 text-slate-400"
+                  data-tab="builds">
+            <i class="fa-solid fa-building mr-2"></i>建築類
+          </button>
+          <button class="tab-btn px-6 py-2.5 rounded-md text-sm font-semibold bg-slate-900 text-slate-400"
+                  data-tab="datapacks">
+            <i class="fa-solid fa-code mr-2"></i>資料包
+          </button>
+        </div>
+
+        <div id="panel-builds" class="portfolio-panel active">
+          <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Build 1 -->
+            <article class="bg-slate-900 rounded-lg overflow-hidden card-lift shadow-neon-emerald border border-slate-800">
+              <button type="button" class="lightbox-trigger aspect-video overflow-hidden w-full cursor-zoom-in block relative group" data-lightbox-src="assets/imgs/Builds/Build1.webp" data-lightbox-alt="浮空紫晶遺跡">
+                <img src="assets/imgs/Builds/Build1.webp"
+                     alt="浮空紫晶遺跡"
+                     loading="lazy"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none">
+                <span class="lightbox-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </button>
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-slate-100 mb-2">浮空紫晶遺跡</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  懸浮於暮色霧靄中的鑽石形遺跡，紫晶與鎖鏈燈籠交織，營造出夢幻奇幻的氣氛。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">浮空結構</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">氛圍光影</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">奇幻美學</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Build 2：外裝 / 內裝 -->
+            <article class="bg-slate-900 rounded-lg overflow-hidden card-lift shadow-neon-emerald border border-slate-800" data-build-view>
+              <button type="button" class="lightbox-trigger aspect-video overflow-hidden relative w-full cursor-zoom-in block group" data-lightbox-dynamic="true">
+                <img src="assets/imgs/Builds/Build2.webp"
+                     alt="哥德式大教堂 — 外裝"
+                     loading="lazy"
+                     data-view="exterior"
+                     class="build-view-img active absolute inset-0 w-full h-full object-cover pointer-events-none">
+                <img src="assets/imgs/Builds/Build2Inside.webp"
+                     alt="哥德式大教堂 — 內裝"
+                     loading="lazy"
+                     data-view="interior"
+                     class="build-view-img absolute inset-0 w-full h-full object-cover pointer-events-none">
+                <span class="lightbox-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </button>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                  <h2 class="text-xl font-bold text-slate-100">哥德式大教堂</h2>
+                  <div class="flex gap-2">
+                    <button type="button" class="build-view-btn active text-xs px-3 py-1 rounded-full font-semibold" data-view="exterior">外裝</button>
+                    <button type="button" class="build-view-btn text-xs px-3 py-1 rounded-full font-semibold" data-view="interior">內裝</button>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  對稱哥德式立面與水面倒影交織的外裝，搭配水晶穹頂、藍毯中廊與精緻祭壇的內裝細節。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="text-xs bg-amber-600/20 text-amber-500 px-3 py-1 rounded-full">哥德建築</span>
+                  <span class="text-xs bg-amber-600/20 text-amber-500 px-3 py-1 rounded-full">外裝／內裝</span>
+                  <span class="text-xs bg-amber-600/20 text-amber-500 px-3 py-1 rounded-full">光影設計</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Build 3 -->
+            <article class="bg-slate-900 rounded-lg overflow-hidden card-lift shadow-neon-emerald border border-slate-800">
+              <button type="button" class="lightbox-trigger aspect-video overflow-hidden w-full cursor-zoom-in block relative group" data-lightbox-src="assets/imgs/Builds/Build3.webp" data-lightbox-alt="古典圓頂宮殿">
+                <img src="assets/imgs/Builds/Build3.webp"
+                     alt="古典圓頂宮殿"
+                     loading="lazy"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none">
+                <span class="lightbox-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </button>
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-slate-100 mb-2">古典圓頂宮殿</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  夜色下的新古典主義建築，中央圓頂與柱廊對稱展開，展現華麗而穩重的宮殿氣勢。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">新古典</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">大型建築</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">對稱構圖</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Build 4 -->
+            <article class="bg-slate-900 rounded-lg overflow-hidden card-lift shadow-neon-emerald border border-slate-800">
+              <button type="button" class="lightbox-trigger aspect-video overflow-hidden w-full cursor-zoom-in block relative group" data-lightbox-src="assets/imgs/Builds/Build4.webp" data-lightbox-alt="月下木構花坊">
+                <img src="assets/imgs/Builds/Build4.webp"
+                     alt="月下木構花坊"
+                     loading="lazy"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none">
+                <span class="lightbox-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </button>
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-slate-100 mb-2">月下木構花坊</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  精緻木構小亭與綠植盆栽細節，在月色與燈籠暖光下呈現溫馨的田園工藝感。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">細節雕刻</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">木構美學</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">氛圍場景</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Build 5 -->
+            <article class="bg-slate-900 rounded-lg overflow-hidden card-lift shadow-neon-emerald border border-slate-800">
+              <button type="button" class="lightbox-trigger aspect-video overflow-hidden w-full cursor-zoom-in block relative group" data-lightbox-src="assets/imgs/Builds/Build5.webp" data-lightbox-alt="暮色拱頂田園">
+                <img src="assets/imgs/Builds/Build5.webp"
+                     alt="暮色拱頂田園"
+                     loading="lazy"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none">
+                <span class="lightbox-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </button>
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-slate-100 mb-2">暮色拱頂田園</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  弧形陶瓦屋頂覆罩金麥與綠植田畦，燈籠懸掛其下，在日落餘暉中展現田園工藝細節。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">田園設計</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">弧形屋頂</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">微觀細節</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Build 6 -->
+            <article class="bg-slate-900 rounded-lg overflow-hidden card-lift shadow-neon-emerald border border-slate-800">
+              <button type="button" class="lightbox-trigger aspect-video overflow-hidden w-full cursor-zoom-in block relative group" data-lightbox-src="assets/imgs/Builds/Build6.webp" data-lightbox-alt="赤焰尖塔小屋">
+                <img src="assets/imgs/Builds/Build6.webp"
+                     alt="赤焰尖塔小屋"
+                     loading="lazy"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none">
+                <span class="lightbox-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </button>
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-slate-100 mb-2">赤焰尖塔小屋</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  深紅漸層屋頂與尖塔造型交織，搭配紅花景觀與暖色燈光，營造奇幻田園的居所氛圍。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="text-xs bg-amber-600/20 text-amber-500 px-3 py-1 rounded-full">奇幻小屋</span>
+                  <span class="text-xs bg-amber-600/20 text-amber-500 px-3 py-1 rounded-full">屋頂造型</span>
+                  <span class="text-xs bg-amber-600/20 text-amber-500 px-3 py-1 rounded-full">景觀細節</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div id="panel-datapacks" class="portfolio-panel">
+          <div class="grid md:grid-cols-2 gap-8">
+
+            <article class="bg-slate-900 rounded-lg overflow-hidden card-lift shadow-neon-emerald border border-slate-800 md:col-span-2 max-w-3xl mx-auto w-full">
+              <button type="button" class="lightbox-trigger aspect-video overflow-hidden w-full cursor-zoom-in block relative group" data-lightbox-src="assets/imgs/Datapack/VillagerRun.webp" data-lightbox-alt="Villager Run — 速通精靈">
+                <img src="assets/imgs/Datapack/VillagerRun.webp"
+                     alt="Villager Run — 速通精靈"
+                     loading="lazy"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none">
+                <span class="lightbox-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </button>
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-slate-100 mb-2">Villager Run · 速通精靈</h2>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                  村民速通挑戰資料包：即時計時、目標追蹤與關卡流程整合，把村莊跑酷打造成可量化的競技體驗。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">速通計時</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">資料包機制</span>
+                  <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">HUD 整合</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="圖片預覽">
+    <button type="button" id="lightbox-close" class="lightbox-close" aria-label="關閉預覽">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+
+  <footer class="bg-slate-900 border-t border-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex items-center justify-center mb-4">
+        <img src="assets/imgs/Logos/logo1.svg" alt="癲桌工藝 I.M. Atelier" class="h-10 w-auto">
+      </div>
+
+      <a href="mailto:contact@imatw.org"
+         class="text-emerald-500 hover:text-emerald-400 transition-colors text-sm inline-flex items-center gap-2 mb-6">
+        <i class="fa-solid fa-envelope"></i>contact@imatw.org
+      </a>
+
+      <p class="text-slate-500 text-xs mb-2">
+        © 2026 癲桌工藝 Insantable Mastery Atelier. All rights reserved.
+      </p>
+      <p class="text-slate-600 text-[11px] max-w-lg mx-auto leading-relaxed">
+        Disclaimer: We are an independent creator team and are not affiliated with, nor endorsed by Mojang Synergies AB.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

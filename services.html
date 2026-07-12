@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="癲桌工藝 IMA 技術委託服務 — 客製化資料包、地圖技術開發與原型調適部署。">
+  <title>技術委託 | 癲桌工藝 IMA</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              100: '#f5f0e8',
+              300: '#cfc6b8',
+              400: '#a89f90',
+              500: '#7a7368',
+              600: '#5c564c',
+              800: '#2a241c',
+              900: '#161310',
+              950: '#0c0b09',
+            },
+            emerald: {
+              400: '#f0c878',
+              500: '#ebb86a',
+              600: '#e2a147',
+              800: '#996b2c',
+              950: '#1f160c',
+            },
+            amber: {
+              500: '#996b2c',
+              600: '#7a5520',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="icon" type="image/webp" href="assets/imgs/favicon.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-scrolled">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+
+        <a href="index.html" class="flex items-center group">
+          <img src="assets/imgs/Logos/logo1.svg" alt="癲桌工藝 I.M. Atelier" class="h-10 lg:h-12 w-auto group-hover:opacity-90 transition-opacity">
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium">首頁</a>
+          <a href="portfolio.html" class="nav-link text-sm font-medium">作品集</a>
+          <a href="services.html" class="nav-link nav-link-active text-sm font-medium">技術委託</a>
+          <a href="team.html" class="nav-link text-sm font-medium">關於團隊</a>
+          <a href="mailto:contact@imatw.org"
+             class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-5 py-2 rounded-md text-sm font-semibold shadow-neon-emerald transition-all">
+            聯繫我們
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn"
+                class="md:hidden text-slate-300 hover:text-emerald-500 transition-colors p-2"
+                aria-label="開啟選單"
+                aria-expanded="false">
+          <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+          <i id="close-icon" class="fa-solid fa-xmark text-xl hidden"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="flex flex-col gap-3 bg-slate-900/95 rounded-lg p-4 border border-emerald-600/20 shadow-lg">
+          <a href="index.html" class="nav-link py-2 px-3 rounded">首頁</a>
+          <a href="portfolio.html" class="nav-link py-2 px-3 rounded">作品集</a>
+          <a href="services.html" class="nav-link nav-link-active py-2 px-3 rounded">技術委託</a>
+          <a href="team.html" class="nav-link py-2 px-3 rounded">關於團隊</a>
+          <a href="mailto:contact@imatw.org"
+             class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-5 py-2.5 rounded-md text-sm font-semibold text-center shadow-neon-emerald transition-all mt-1">
+            聯繫我們
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-banner bg-slate-900 border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-3">服務與技術委託</h1>
+        <p class="text-slate-400 max-w-2xl mx-auto">專業 Minecraft 客製化開發服務 — 以技術工時計酬，合規透明。</p>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="eula-notice bg-slate-950/60 rounded-lg p-4 mb-12 max-w-3xl mx-auto">
+          <p class="text-amber-500 text-sm font-semibold mb-1">
+            <i class="fa-solid fa-shield-halved mr-2"></i>Mojang EULA 完全合規
+          </p>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            以下所有費用皆為「客製化技術工時、測試調試之服務報酬（工人技術服務費）」，不涉及任何 Minecraft 衍生數位商品之銷售或買斷。我們提供的是代客設計地圖之勞務委託，而非遊戲內容之販售。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+
+          <!-- 1. 資料包 -->
+          <div class="bg-slate-950 rounded-lg p-6 border border-slate-800 card-lift shadow-neon-emerald flex flex-col">
+            <div class="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="fa-solid fa-code text-emerald-500 text-xl"></i>
+            </div>
+            <h2 class="text-lg font-bold text-slate-100 mb-2">單次客製化資料包技術開發</h2>
+            <p class="text-xs text-emerald-500 font-medium mb-3">Custom Datapack · 全新開發</p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              全新客製化資料包代碼編寫，把你的腦洞玩法變成真實的遊戲機制。
+            </p>
+            <p class="text-amber-500 font-semibold text-sm">
+              標準技術服務費：新台幣 1,000 元至 2,500 元整
+            </p>
+            <p class="text-slate-500 text-xs mt-1">（具體金額由雙方視功能複雜度與預估開發工時另行議定）</p>
+          </div>
+
+          <!-- 2. 地圖技術開發（兩種計費模式） -->
+          <div class="bg-slate-950 rounded-lg p-6 border border-emerald-600/30 card-lift shadow-neon-emerald flex flex-col relative md:col-span-2 lg:col-span-1">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-slate-950 text-xs px-3 py-1 rounded-full font-semibold">
+              熱門
+            </div>
+            <div class="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="fa-solid fa-map text-emerald-500 text-xl"></i>
+            </div>
+            <h2 class="text-lg font-bold text-slate-100 mb-2">客製化地圖技術開發與調適</h2>
+            <p class="text-xs text-emerald-500 font-medium mb-4">Custom Map Development · 分模式計費</p>
+
+            <div class="space-y-4 flex-grow">
+              <div class="bg-slate-900/60 rounded-lg p-4 border border-slate-800">
+                <h3 class="text-sm font-semibold text-slate-200 mb-1">純指令技術代工模式</h3>
+                <p class="text-slate-500 text-xs mb-2">由甲方提供地圖檔，乙方僅進行指令與技術製作</p>
+                <p class="text-amber-500 font-semibold text-sm">
+                  新台幣 1,200 元至 2,500 元整
+                </p>
+                <p class="text-slate-500 text-xs mt-1">（視指令複雜度與機關難度另行議定）</p>
+              </div>
+
+              <div class="bg-slate-900/60 rounded-lg p-4 border border-emerald-800/30">
+                <h3 class="text-sm font-semibold text-slate-200 mb-1">全客製化整合模式</h3>
+                <p class="text-slate-500 text-xs mb-2">包含場景建築設計與指令技術一條龍整合開發</p>
+                <p class="text-amber-500 font-semibold text-sm">
+                  新台幣 2,000 元至 4,000 元整
+                </p>
+                <p class="text-slate-500 text-xs mt-1">（視地圖大小、建築美學精緻度、機關複雜度另行議定）</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 原型調適 -->
+          <div class="bg-slate-950 rounded-lg p-6 border border-slate-800 card-lift shadow-neon-emerald flex flex-col md:col-span-2 lg:col-span-1">
+            <div class="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center mb-4">
+              <i class="fa-solid fa-wrench text-emerald-500 text-xl"></i>
+            </div>
+            <h2 class="text-lg font-bold text-slate-100 mb-2">既存原型之調適與部署服務</h2>
+            <p class="text-xs text-emerald-500 font-medium mb-3">Prototype Adaptation &amp; Deployment</p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              若委託內容涉及乙方已完成之原型框架（Prototype）或現成功能，乙方僅收取「歷史代碼之客製化調適、相容性優化與部署測試」之技術服務費。
+            </p>
+            <p class="text-amber-500 font-semibold text-sm">
+              標準調適服務費：新台幣 600 元至 1,500 元整
+            </p>
+          </div>
+
+        </div>
+
+        <details class="partner-toggle bg-slate-950/80 border border-amber-500/20 rounded-lg max-w-2xl mx-auto mb-16">
+          <summary class="flex items-center justify-between p-4 text-sm font-medium text-amber-500 hover:bg-amber-500/5 rounded-lg transition-colors">
+            <span>
+              <i class="fa-solid fa-handshake mr-2"></i>實況主 / 創作者專屬合作互惠方案
+            </span>
+            <i class="fa-solid fa-chevron-down chevron-icon text-xs"></i>
+          </summary>
+          <div class="px-4 pb-4 text-slate-400 text-sm leading-relaxed">
+            <p>
+              依您頻道前 30 天的平均觀看數（長影片前 5 支平均），可直接折抵本專案技術服務費
+              <span class="text-amber-500 font-semibold">NT$ 200 ~ 800+</span>！
+            </p>
+            <p class="text-slate-500 text-xs mt-2">
+              ※ 啟用折價需於影片中插入 30 秒「癲桌工藝 (IMA)」宣傳並置頂資訊欄連結。
+            </p>
+          </div>
+        </details>
+
+        <div class="text-center mb-8">
+          <h2 class="text-xl font-bold text-slate-100 mb-2">
+            <i class="fa-solid fa-list-check text-emerald-500 mr-2"></i>專業開發委託流程
+          </h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-6 max-w-5xl mx-auto mb-12">
+          <div class="process-step text-center min-w-[120px]">
+            <div class="w-10 h-10 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="text-emerald-500 font-bold text-sm">1</span>
+            </div>
+            <p class="text-slate-300 text-xs font-medium">需求洽詢</p>
+            <p class="text-slate-500 text-[10px]">填寫規格</p>
+          </div>
+          <div class="process-step text-center min-w-[120px]">
+            <div class="w-10 h-10 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="text-emerald-500 font-bold text-sm">2</span>
+            </div>
+            <p class="text-slate-300 text-xs font-medium">規格確認與估價</p>
+          </div>
+          <div class="process-step text-center min-w-[120px]">
+            <div class="w-10 h-10 bg-amber-600/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="text-amber-500 font-bold text-sm">3</span>
+            </div>
+            <p class="text-slate-300 text-xs font-medium">支付前期勞務訂金</p>
+          </div>
+          <div class="process-step text-center min-w-[120px]">
+            <div class="w-10 h-10 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="text-emerald-500 font-bold text-sm">4</span>
+            </div>
+            <p class="text-slate-300 text-xs font-medium">技術開發與進度回報</p>
+          </div>
+          <div class="process-step text-center min-w-[120px]">
+            <div class="w-10 h-10 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="text-emerald-500 font-bold text-sm">5</span>
+            </div>
+            <p class="text-slate-300 text-xs font-medium">測試驗收</p>
+          </div>
+          <div class="process-step text-center min-w-[120px]">
+            <div class="w-10 h-10 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="text-emerald-500 font-bold text-sm">6</span>
+            </div>
+            <p class="text-slate-300 text-xs font-medium">交付與部署</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="mailto:contact@imatw.org"
+             class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-8 py-3 rounded-md font-semibold shadow-neon-emerald transition-all">
+            <i class="fa-solid fa-envelope"></i>立即委託諮詢
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 border-t border-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex items-center justify-center mb-4">
+        <img src="assets/imgs/Logos/logo1.svg" alt="癲桌工藝 I.M. Atelier" class="h-10 w-auto">
+      </div>
+
+      <a href="mailto:contact@imatw.org"
+         class="text-emerald-500 hover:text-emerald-400 transition-colors text-sm inline-flex items-center gap-2 mb-6">
+        <i class="fa-solid fa-envelope"></i>contact@imatw.org
+      </a>
+
+      <p class="text-slate-500 text-xs mb-2">
+        © 2026 癲桌工藝 Insantable Mastery Atelier. All rights reserved.
+      </p>
+      <p class="text-slate-600 text-[11px] max-w-lg mx-auto leading-relaxed">
+        Disclaimer: We are an independent creator team and are not affiliated with, nor endorsed by Mojang Synergies AB.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

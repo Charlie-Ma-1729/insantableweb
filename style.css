@@ -1,0 +1,447 @@
+/* ============================================
+   癲桌工藝 IMA — Custom Styles
+   Palette: #e2a147 (primary) · #996b2c (secondary)
+   ============================================ */
+
+:root {
+  --bg-primary: #0c0b09;
+  --bg-card: #161310;
+  --brand: #e2a147;
+  --brand-light: #ebb86a;
+  --brand-dark: #c9892e;
+  --brand-glow: rgba(226, 161, 71, 0.5);
+  --brand-glow-soft: rgba(226, 161, 71, 0.22);
+  --brand-shadow: rgba(226, 161, 71, 0.35);
+  --accent: #996b2c;
+  --accent-deep: #7a5520;
+  --text-primary: #f5f0e8;
+  --text-muted: #a89f90;
+  --scrollbar-track: #161310;
+  --scrollbar-thumb: #996b2c;
+  --scrollbar-thumb-hover: #e2a147;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Neon Text (gold glow) ── */
+.neon-text-emerald {
+  color: var(--brand);
+  text-shadow:
+    0 0 10px var(--brand-glow),
+    0 0 20px var(--brand-glow-soft),
+    0 0 40px rgba(226, 161, 71, 0.12);
+}
+
+/* ── Hover Glow ── */
+.shadow-neon-emerald {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.shadow-neon-emerald:hover {
+  box-shadow: 0 0 15px var(--brand-shadow);
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+  border: 2px solid var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* ── Navbar Glassmorphism ── */
+#navbar nav {
+  position: relative;
+}
+
+.navbar-scrolled {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(12, 11, 9, 0.85) !important;
+  border-bottom: 1px solid rgba(226, 161, 71, 0.12);
+}
+
+/* ── Mobile Menu (absolute: closed = no height) ── */
+.mobile-menu {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 100%;
+  z-index: 60;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  padding-bottom: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease, max-height 0.25s ease;
+}
+
+.mobile-menu.open {
+  max-height: 24rem;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  padding-bottom: 1rem;
+  transform: translateY(0);
+}
+
+@media (min-width: 640px) {
+  .mobile-menu {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu {
+    left: 2rem;
+    right: 2rem;
+  }
+}
+
+/* ── Portfolio Tab Active ── */
+.tab-btn {
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: var(--brand);
+  color: #0c0b09;
+  box-shadow: 0 0 12px rgba(226, 161, 71, 0.35);
+}
+
+.tab-btn:not(.active):hover {
+  background-color: rgba(226, 161, 71, 0.15);
+  color: var(--brand);
+}
+
+/* ── Portfolio Panel Fade ── */
+.portfolio-panel {
+  display: none;
+  opacity: 0;
+  animation: none;
+}
+
+.portfolio-panel.active {
+  display: block;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Hero Background Overlay ── */
+.hero-bg {
+  background-image: url('assets/imgs/Banner.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(12, 11, 9, 0.5) 0%,
+    rgba(12, 11, 9, 0.55) 50%,
+    rgba(12, 11, 9, 0.7) 100%
+  );
+}
+
+.hero-logo {
+  filter: drop-shadow(0 0 18px rgba(226, 161, 71, 0.35));
+}
+
+/* ── Card Hover Lift ── */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ── Collapsible Partner Deal ── */
+.partner-toggle summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.partner-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+.partner-toggle[open] .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+/* ── Process Steps ── */
+.process-step {
+  position: relative;
+}
+
+.process-step:not(:last-child)::after {
+  content: '➔';
+  position: absolute;
+  right: -1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .process-step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* ── Team Card Pixel Border ── */
+.team-card {
+  border: 2px solid rgba(226, 161, 71, 0.25);
+  position: relative;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 12px;
+  height: 12px;
+  background: var(--brand);
+}
+
+.team-card::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+}
+
+.team-stat {
+  white-space: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+  scrollbar-width: none;
+}
+
+.team-stat::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── EULA Compliance Banner ── */
+.eula-notice {
+  border-left: 3px solid var(--accent);
+}
+
+/* ── Multi-page Layout ── */
+.page-main {
+  padding-top: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .page-main {
+    padding-top: 5rem;
+  }
+}
+
+.page-banner {
+  background: linear-gradient(
+    180deg,
+    rgba(22, 19, 16, 1) 0%,
+    rgba(12, 11, 9, 0.7) 100%
+  );
+}
+
+/* ── Navigation Links ── */
+.nav-link {
+  color: #cfc6b8;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--brand);
+}
+
+.nav-link-active {
+  color: var(--brand) !important;
+}
+
+.mobile-menu .nav-link:hover {
+  background-color: rgba(226, 161, 71, 0.1);
+}
+
+.mobile-menu .nav-link-active {
+  background-color: rgba(226, 161, 71, 0.15);
+}
+
+/* ── Build Exterior / Interior Toggle ── */
+.build-view-btn {
+  transition: all 0.25s ease;
+}
+
+.build-view-btn.active {
+  background-color: var(--brand);
+  color: #0c0b09;
+}
+
+.build-view-btn:not(.active) {
+  background-color: rgba(226, 161, 71, 0.1);
+  color: var(--brand);
+}
+
+.build-view-btn:not(.active):hover {
+  background-color: rgba(226, 161, 71, 0.2);
+}
+
+.build-view-img {
+  display: none;
+}
+
+.build-view-img.active {
+  display: block;
+  animation: fadeIn 0.35s ease forwards;
+}
+
+/* ── Lightbox Preview ── */
+.lightbox-trigger {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.lightbox-hint {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(12, 11, 9, 0.65);
+  color: var(--brand);
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.lightbox-trigger:hover .lightbox-hint,
+.lightbox-trigger:focus-visible .lightbox-hint {
+  opacity: 1;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: rgba(12, 11, 9, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox.open[hidden] {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(96vw, 1280px);
+  max-height: calc(100vh - 6rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 40px rgba(226, 161, 71, 0.2);
+  transform: scale(0.96);
+  transition: transform 0.25s ease;
+}
+
+.lightbox.open img {
+  transform: scale(1);
+}
+
+.lightbox-caption {
+  color: #cfc6b8;
+  font-size: 0.875rem;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 9999px;
+  background: rgba(226, 161, 71, 0.15);
+  color: var(--brand);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(226, 161, 71, 0.3);
+  transform: scale(1.05);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}

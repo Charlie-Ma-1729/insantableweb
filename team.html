@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="認識癲桌工藝 IMA 六人團隊 — 建築、技術與企劃一條龍。">
+  <title>關於團隊 | 癲桌工藝 IMA</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              100: '#f5f0e8',
+              300: '#cfc6b8',
+              400: '#a89f90',
+              500: '#7a7368',
+              600: '#5c564c',
+              800: '#2a241c',
+              900: '#161310',
+              950: '#0c0b09',
+            },
+            emerald: {
+              400: '#f0c878',
+              500: '#ebb86a',
+              600: '#e2a147',
+              800: '#996b2c',
+              950: '#1f160c',
+            },
+            amber: {
+              500: '#996b2c',
+              600: '#7a5520',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="icon" type="image/webp" href="assets/imgs/favicon.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-scrolled">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+
+        <a href="index.html" class="flex items-center group">
+          <img src="assets/imgs/Logos/logo1.svg" alt="癲桌工藝 I.M. Atelier" class="h-10 lg:h-12 w-auto group-hover:opacity-90 transition-opacity">
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium">首頁</a>
+          <a href="portfolio.html" class="nav-link text-sm font-medium">作品集</a>
+          <a href="services.html" class="nav-link text-sm font-medium">技術委託</a>
+          <a href="team.html" class="nav-link nav-link-active text-sm font-medium">關於團隊</a>
+          <a href="mailto:contact@imatw.org"
+             class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-5 py-2 rounded-md text-sm font-semibold shadow-neon-emerald transition-all">
+            聯繫我們
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn"
+                class="md:hidden text-slate-300 hover:text-emerald-500 transition-colors p-2"
+                aria-label="開啟選單"
+                aria-expanded="false">
+          <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+          <i id="close-icon" class="fa-solid fa-xmark text-xl hidden"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="flex flex-col gap-3 bg-slate-900/95 rounded-lg p-4 border border-emerald-600/20 shadow-lg">
+          <a href="index.html" class="nav-link py-2 px-3 rounded">首頁</a>
+          <a href="portfolio.html" class="nav-link py-2 px-3 rounded">作品集</a>
+          <a href="services.html" class="nav-link py-2 px-3 rounded">技術委託</a>
+          <a href="team.html" class="nav-link nav-link-active py-2 px-3 rounded">關於團隊</a>
+          <a href="mailto:contact@imatw.org"
+             class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-5 py-2.5 rounded-md text-sm font-semibold text-center shadow-neon-emerald transition-all mt-1">
+            聯繫我們
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-banner bg-slate-900 border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-3">關於團隊</h1>
+        <p class="text-slate-400">六位癲狂工匠，一個方塊一個方塊地砌出不可能。</p>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div class="team-card bg-slate-900 rounded-lg p-6 card-lift shadow-neon-emerald">
+            <div class="flex items-start gap-4">
+              <img src="https://picsum.photos/400/400?random=11"
+                   alt="Charlie — Lead Developer"
+                   class="w-20 h-20 rounded-sm object-cover border-2 border-emerald-600/40">
+              <div>
+                <h2 class="text-lg font-bold text-slate-100">Charlie</h2>
+                <p class="text-emerald-500 text-sm font-medium">Lead Developer · 技術核心</p>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+              專長：把不可能的腦洞變成程式碼、Bug 召喚與驅離術。
+            </p>
+            <p class="text-amber-500 text-sm mt-3 team-stat">
+              癲桌翻桌指數：⭐⭐⭐⭐⭐
+            </p>
+          </div>
+
+          <div class="team-card bg-slate-900 rounded-lg p-6 card-lift shadow-neon-emerald">
+            <div class="flex items-start gap-4">
+              <img src="https://picsum.photos/400/400?random=12"
+                   alt="Architect — Chief Architect"
+                   class="w-20 h-20 rounded-sm object-cover border-2 border-amber-500/40">
+              <div>
+                <h2 class="text-lg font-bold text-slate-100">Architect</h2>
+                <p class="text-amber-500 text-sm font-medium">Chief Architect · 首席建築師</p>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+              專長：爆肝刻方塊、無中生有蓋出蓋世巨作。
+            </p>
+            <p class="text-amber-500 text-sm mt-3 team-stat">
+              癲桌翻桌指數：⭐⭐⭐⭐
+            </p>
+          </div>
+
+          <div class="team-card bg-slate-900 rounded-lg p-6 card-lift shadow-neon-emerald">
+            <div class="flex items-start gap-4">
+              <img src="assets/imgs/Avatars/Bomdiaola.webp"
+                   alt="邦機啊歐拉 — Professor Noise"
+                   class="w-20 h-20 rounded-sm object-cover border-2 border-emerald-600/40">
+              <div>
+                <h2 class="text-lg font-bold text-slate-100">邦機啊歐拉</h2>
+                <p class="text-emerald-500 text-sm font-medium">Professor Noise · 好吵好吵</p>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+              聒噪鳥一枚，最常邊碎碎念邊蓋房子，然後吉娃娃世界最棒好不好。
+            </p>
+            <p class="text-slate-500 text-xs mt-2">最愛：狗、彩虹小馬</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">建築</span>
+              <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">抽象</span>
+              <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">設計</span>
+              <span class="text-xs bg-emerald-600/20 text-emerald-500 px-3 py-1 rounded-full">混材料</span>
+            </div>
+            <div class="mt-3 space-y-1">
+              <p class="text-amber-500 text-sm team-stat">吉娃娃指數：⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐(爆表好吧)</p>
+              <p class="text-amber-500 text-sm team-stat">建築速度指數：⭐⭐⭐⭐</p>
+            </div>
+          </div>
+
+          <div class="team-card bg-slate-900 rounded-lg p-6 card-lift shadow-neon-emerald">
+            <div class="flex items-start gap-4">
+              <img src="https://picsum.photos/400/400?random=14"
+                   alt="Brick — Environment Artist"
+                   class="w-20 h-20 rounded-sm object-cover border-2 border-amber-500/40">
+              <div>
+                <h2 class="text-lg font-bold text-slate-100">Brick</h2>
+                <p class="text-amber-500 text-sm font-medium">Environment Artist · 場景氛圍</p>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+              專長：地形雕刻、光影氛圍、讓世界看起來像會呼吸。
+            </p>
+            <p class="text-amber-500 text-sm mt-3 team-stat">
+              癲桌翻桌指數：⭐⭐⭐⭐
+            </p>
+          </div>
+
+          <div class="team-card bg-slate-900 rounded-lg p-6 card-lift shadow-neon-emerald">
+            <div class="flex items-start gap-4">
+              <img src="https://picsum.photos/400/400?random=15"
+                   alt="Quest — Level Designer"
+                   class="w-20 h-20 rounded-sm object-cover border-2 border-emerald-600/40">
+              <div>
+                <h2 class="text-lg font-bold text-slate-100">Quest</h2>
+                <p class="text-emerald-500 text-sm font-medium">Level Designer · 關卡企劃</p>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+              專長：流程節奏、解謎設計、把玩法講成一個完整故事。
+            </p>
+            <p class="text-amber-500 text-sm mt-3 team-stat">
+              癲桌翻桌指數：⭐⭐⭐⭐
+            </p>
+          </div>
+
+          <div class="team-card bg-slate-900 rounded-lg p-6 card-lift shadow-neon-emerald">
+            <div class="flex items-start gap-4">
+              <img src="https://picsum.photos/400/400?random=16"
+                   alt="Echo — QA &amp; Deployment"
+                   class="w-20 h-20 rounded-sm object-cover border-2 border-amber-500/40">
+              <div>
+                <h2 class="text-lg font-bold text-slate-100">Echo</h2>
+                <p class="text-amber-500 text-sm font-medium">QA &amp; Deployment · 測試部署</p>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+              專長：找洞補洞、相容性驗證、把成品穩穩交到伺服器上。
+            </p>
+            <p class="text-amber-500 text-sm mt-3 team-stat">
+              癲桌翻桌指數：⭐⭐⭐⭐⭐
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 border-t border-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex items-center justify-center mb-4">
+        <img src="assets/imgs/Logos/logo1.svg" alt="癲桌工藝 I.M. Atelier" class="h-10 w-auto">
+      </div>
+
+      <a href="mailto:contact@imatw.org"
+         class="text-emerald-500 hover:text-emerald-400 transition-colors text-sm inline-flex items-center gap-2 mb-6">
+        <i class="fa-solid fa-envelope"></i>contact@imatw.org
+      </a>
+
+      <p class="text-slate-500 text-xs mb-2">
+        © 2026 癲桌工藝 Insantable Mastery Atelier. All rights reserved.
+      </p>
+      <p class="text-slate-600 text-[11px] max-w-lg mx-auto leading-relaxed">
+        Disclaimer: We are an independent creator team and are not affiliated with, nor endorsed by Mojang Synergies AB.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
